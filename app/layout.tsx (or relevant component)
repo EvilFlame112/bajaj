@@ -1,0 +1,33 @@
+'use client'; // Mark as client component if needed
+
+import { useState, useEffect } from 'react';
+// Import your providers (e.g., ChakraProvider)
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // This code runs only on the client, after the initial render
+    setIsMounted(true);
+  }, []); // Empty dependency array ensures it runs once after mount
+
+  // Example: Conditionally render or apply attributes based on mount status
+  // This prevents mismatch during initial hydration
+  const bodyClassName = isMounted ? "__className_d65c78 chakra-ui-light" : "__className_d65c78";
+  const htmlDataTheme = isMounted ? "light" : undefined; // Or null
+  const htmlStyle = isMounted ? { colorScheme: "light" } : undefined; // Or null
+
+  return (
+    <html lang="en" data-theme={htmlDataTheme} style={htmlStyle}>
+      <body className={bodyClassName}>
+        {/* Wrap children with necessary providers */}
+        {/* <ChakraProvider> */}
+             {/* Only render children once mounted if they cause hydration issues,
+                 though often just delaying attribute application is enough */}
+             {/* {isMounted ? children : <div>Loading...</div>} */}
+             {children}
+        {/* </ChakraProvider> */}
+      </body>
+    </html>
+  );
+} 
