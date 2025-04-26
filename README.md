@@ -1,10 +1,5 @@
 
 # 🚀 Bajaj Qualifier 1 Submission – Project by EvilFlame112
-
-Welcome to the official submission repository for **Bajaj Qualifier 1**! This project represents a bold step in showcasing modern web development skills, embracing cutting-edge technologies, clean code architecture, and performance-first design.
-
-Crafted with care, passion, and precision – this application is a testament to thoughtful engineering and elegant frontend execution.
-
 ---
 
 ## 🌟 Project Overview
